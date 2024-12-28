@@ -14,7 +14,7 @@
 
   outputs = { self, nixpkgs }:
     let
-      packages = import nixpkgs { system = "x86_64-linux"; };
+      packages = nixpkgs.legacyPackages."x86_64-linux";
 
       nixvirtPythonModulePackage = packages.runCommand "nixvirtPythonModulePackage" { }
         ''
